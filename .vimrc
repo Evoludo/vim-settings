@@ -13,6 +13,7 @@ set hlsearch
 set laststatus=2
 "set lazyredraw
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_python_flake8_options = '--ignore=E501'
 highlight CursorLine ctermbg=0 cterm=none
 highlight LineNr ctermfg=darkgrey
 highlight CursorLineNr ctermfg=grey
@@ -21,6 +22,7 @@ nnoremap <leader># :set nu!<CR>
 nnoremap <leader><space> :set cursorline!<CR>
 nnoremap <leader><esc> :nohlsearch<CR>
 nnoremap <leader>s :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar>syntax enable <Bar> endif<CR>
+nnoremap <leader>l :execute 'sign unplace *' <Bar> if g:ale_enabled == 1 <Bar> let g:ale_enabled = 0 <Bar> else <Bar> let g:ale_enabled = 1 <Bar> endif<CR>
 nnoremap <C-Tab> :bn<CR>
 nnoremap <C-S-Tab> :bp<CR>
 nnoremap <F5> :w\|!python %<CR>
