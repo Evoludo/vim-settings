@@ -1,6 +1,7 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+au BufNewFile,BufRead *.yaml,*.yml so ~/.vim/syntax/yaml.vim
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -18,13 +19,13 @@ highlight CursorLine ctermbg=0 cterm=none
 highlight LineNr ctermfg=darkgrey
 highlight CursorLineNr ctermfg=grey
 highlight StatusLine ctermfg=darkgrey ctermbg=white
-nnoremap <leader># :set nu!<CR>
-nnoremap <leader><space> :set cursorline!<CR>
-nnoremap <leader><esc> :nohlsearch<CR>
-nnoremap <leader>s :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar>syntax enable <Bar> endif<CR>
-nnoremap <leader>l :execute 'sign unplace *' <Bar> if g:ale_enabled == 1 <Bar> let g:ale_enabled = 0 <Bar> else <Bar> let g:ale_enabled = 1 <Bar> endif<CR>
-nnoremap <C-Tab> :bn<CR>
-nnoremap <C-S-Tab> :bp<CR>
+nnoremap <silent> <leader># :set nu!<CR>
+nnoremap <silent> <leader><space> :set cursorline!<CR>
+nnoremap <silent> <leader><esc> :nohlsearch<CR>
+nnoremap <silent> <leader>s :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar>syntax enable <Bar> endif<CR>
+nnoremap <silent> <leader>l :if g:ale_enabled == 1 <Bar> execute 'sign unplace *'<Bar> call ale#highlight#RemoveHighlights([]) <Bar> let g:ale_enabled = 0 <Bar> else <Bar> let g:ale_enabled = 1 <Bar> ALELint <Bar> endif<CR>
+nnoremap <silent> <leader><Tab> :bn<CR>
+nnoremap <silent> <leader><S-Tab> :bp<CR>
 nnoremap <F5> :w\|!python %<CR>
 set pastetoggle=<leader>p
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/cache/.viminfo
