@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/local/CORP/andrewbell/Code/logging_services/data-processing-platform/ansible/service/server/aws'
-let g:netrw_dirhist_2='/home/local/CORP/andrewbell/Code/logging_services/data-processing-platform/ansible/service/server/roles/kafka_topic_enforcer'
-let g:netrw_dirhist_3='/home/local/CORP/andrewbell/Code/User State Machine/flights-apps-consumer/deploy/ansible/roles/apps-consumer'
-let g:netrw_dirhist_4='/home/local/CORP/andrewbell/Code/User State Machine'
-let g:netrw_dirhist_5='/home/local/CORP/andrewbell/Code/logging_services/data-processing-platform/ansible/service/server/roles/kafka_topic_enforcer/files/tests'
-let g:netrw_dirhist_6='/home/local/CORP/andrewbell/Code/logging_services/grappler-bot/aws_helper'
-let g:netrw_dirhist_7='/home/local/CORP/andrewbell/Code/logging_services/grappler-bot/.git'
-let g:netrw_dirhist_8='/home/local/CORP/andrewbell/Code/logging_services/data-processing-platform/ansible/service/server/roles/kafka_topic_enforcer'
-let g:netrw_dirhist_9='/home/local/CORP/andrewbell/Code/logging_services/grappler-config-api'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/andrew/.kube'
+let g:netrw_dirhist_2='/home/andrew/.aws'
+let g:netrw_dirhist_3='/home/andrew/Code/backend/wire-server-private/ci/scripts'

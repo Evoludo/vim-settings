@@ -23,7 +23,7 @@ nnoremap <silent> <leader># :set nu!<CR>
 nnoremap <silent> <leader><space> :set cursorline!<CR>
 nnoremap <silent> <leader><esc> :nohlsearch<CR>
 nnoremap <silent> <leader>s :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar>syntax enable <Bar> endif<CR>
-nnoremap <silent> <leader>l :if g:ale_enabled == 1 <Bar> execute 'sign unplace *'<Bar> call ale#highlight#RemoveHighlights([]) <Bar> let g:ale_enabled = 0 <Bar> else <Bar> let g:ale_enabled = 1 <Bar> ALELint <Bar> endif<CR>
+nnoremap <silent> <leader>l :if g:ale_enabled == 1 <Bar> execute 'sign unplace *'<Bar> call ale#highlight#RemoveHighlights() <Bar> let g:ale_enabled = 0 <Bar> else <Bar> let g:ale_enabled = 1 <Bar> ALELint <Bar> endif<CR>
 nnoremap <silent> <leader><Tab> :bn<CR>
 nnoremap <silent> <leader><S-Tab> :bp<CR>
 nnoremap <F5> :w\|!python %<CR>
@@ -44,27 +44,27 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Statusline
 " https://github.com/Greduan/dotfiles/blob/76e16dd8a04501db29989824af512c453550591d/vim/after/plugin/statusline.vim
 
-let g:currentmode={
-      \ 'n'  : 'N ',
-      \ 'no' : 'N·Operator Pending ',
-      \ 'v'  : 'V ',
-      \ 'V'  : 'V·Line ',
-      \ '' : 'V·Block ',
-      \ 's'  : 'Select ',
-      \ 'S'  : 'S·Line ',
-      \ '' : 'S·Block ',
-      \ 'i'  : 'I ',
-      \ 'R'  : 'R ',
-      \ 'Rv' : 'V·Replace ',
-      \ 'c'  : 'Command ',
-      \ 'cv' : 'Vim Ex ',
-      \ 'ce' : 'Ex ',
-      \ 'r'  : 'Prompt ',
-      \ 'rm' : 'More ',
-      \ 'r?' : 'Confirm ',
-      \ '!'  : 'Shell ',
-      \ 't'  : 'Terminal '
-      \}
+"let g:currentmode={
+"      \ 'n'  : 'N ',
+"      \ 'no' : 'N·Operator Pending ',
+"      \ 'v'  : 'V ',
+"      \ 'V'  : 'V·Line ',
+"      \ '' : 'V·Block ',
+"      \ 's'  : 'Select ',
+"      \ 'S'  : 'S·Line ',
+"      \ '' : 'S·Block ',
+"      \ 'i'  : 'I ',
+"      \ 'R'  : 'R ',
+"      \ 'Rv' : 'V·Replace ',
+"      \ 'c'  : 'Command ',
+"      \ 'cv' : 'Vim Ex ',
+"      \ 'ce' : 'Ex ',
+"      \ 'r'  : 'Prompt ',
+"      \ 'rm' : 'More ',
+"      \ 'r?' : 'Confirm ',
+"      \ '!'  : 'Shell ',
+"      \ 't'  : 'Terminal '
+"      \}
 
 
 " Automatically change the statusline color depending on mode
