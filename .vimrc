@@ -13,6 +13,7 @@ set showmatch
 set hlsearch
 set laststatus=2
 set mouse=a
+set tags=./tags;
 "set lazyredraw
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_python_flake8_options = '--ignore=E501'
