@@ -12,6 +12,7 @@ set cursorline
 set showmatch
 set hlsearch
 set laststatus=2
+set mouse=a
 "set lazyredraw
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_python_flake8_options = '--ignore=E501'
@@ -27,6 +28,7 @@ nnoremap <silent> <leader>l :if g:ale_enabled == 1 <Bar> execute 'sign unplace *
 nnoremap <silent> <leader><Tab> :bn<CR>
 nnoremap <silent> <leader><S-Tab> :bp<CR>
 nnoremap <F5> :w\|!python %<CR>
+vnoremap <C-c> "+y
 set pastetoggle=<leader>p
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/cache/.viminfo
 "           | |    |   |   |    | |  + viminfo file path
