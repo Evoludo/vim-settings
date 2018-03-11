@@ -28,6 +28,7 @@ nnoremap <silent> <leader>s :if exists("g:syntax_on") <Bar> syntax off <Bar> els
 nnoremap <silent> <leader>l :if g:ale_enabled == 1 <Bar> execute 'sign unplace *'<Bar> call ale#highlight#RemoveHighlights() <Bar> let g:ale_enabled = 0 <Bar> else <Bar> let g:ale_enabled = 1 <Bar> ALELint <Bar> endif<CR>
 nnoremap <silent> <leader><Tab> :bn<CR>
 nnoremap <silent> <leader><S-Tab> :bp<CR>
+nnoremap <leader>g :!stack ghc -- -fno-code -v0 %<CR>
 nnoremap <F5> :w\|!python %<CR>
 vnoremap <C-c> "+y
 set pastetoggle=<leader>p
@@ -42,7 +43,9 @@ set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/cache/.viminfo
 "           + save/restore buffer list
 set dir=~/.vim/tmp
 au BufRead,BufNewFile *.md set filetype=markdown
-
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
+autocmd BufEnter,BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+autocmd VimLeave * call system("tmux rename-window -")
 
 " Statusline
 " https://github.com/Greduan/dotfiles/blob/76e16dd8a04501db29989824af512c453550591d/vim/after/plugin/statusline.vim
