@@ -17,7 +17,7 @@ set tags=./tags;
 "set lazyredraw
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_python_flake8_options = '--ignore=E501'
-highlight CursorLine ctermbg=0 cterm=none
+highlight CursorLine ctermbg=234 cterm=none
 highlight LineNr ctermfg=darkgrey
 highlight CursorLineNr ctermfg=grey
 highlight StatusLine ctermfg=darkgrey ctermbg=white
