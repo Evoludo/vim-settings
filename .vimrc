@@ -26,8 +26,8 @@ nnoremap <silent> <leader><space> :set cursorline!<CR>
 nnoremap <silent> <leader><esc> :nohlsearch<CR>
 nnoremap <silent> <leader>s :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar>syntax enable <Bar> endif<CR>
 nnoremap <silent> <leader>l :if g:ale_enabled == 1 <Bar> execute 'sign unplace *'<Bar> call ale#highlight#RemoveHighlights() <Bar> let g:ale_enabled = 0 <Bar> else <Bar> let g:ale_enabled = 1 <Bar> ALELint <Bar> endif<CR>
-nnoremap <silent> <leader><Tab> :bn<CR>
-nnoremap <silent> <leader><S-Tab> :bp<CR>
+nnoremap <silent> <leader>] :bn!<CR>
+nnoremap <silent> <leader>[ :bp!<CR>
 nnoremap <leader>g :!stack ghc -- -fno-code -v0 %<CR>
 nnoremap <F5> :w\|!python %<CR>
 vnoremap <C-c> "+y
@@ -46,6 +46,8 @@ au BufRead,BufNewFile *.md set filetype=markdown
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
 autocmd BufEnter,BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
 autocmd VimLeave * call system("tmux rename-window -")
+set list
+set listchars=tab:>-
 
 " Statusline
 " https://github.com/Greduan/dotfiles/blob/76e16dd8a04501db29989824af512c453550591d/vim/after/plugin/statusline.vim
