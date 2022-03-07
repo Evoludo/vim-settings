@@ -25,7 +25,7 @@ nnoremap <silent> <leader># :set nu!<CR>
 nnoremap <silent> <leader><space> :set cursorline!<CR>
 nnoremap <silent> <leader><esc> :nohlsearch<CR>
 nnoremap <silent> <leader>s :if exists("g:syntax_on") <Bar> syntax off <Bar> else <Bar>syntax enable <Bar> endif<CR>
-nnoremap <silent> <leader>l :if g:ale_enabled == 1 <Bar> execute 'sign unplace *'<Bar> call ale#highlight#RemoveHighlights() <Bar> let g:ale_enabled = 0 <Bar> else <Bar> let g:ale_enabled = 1 <Bar> ALELint <Bar> endif<CR>
+nnoremap <silent> <leader>l :if g:ale_enabled == 1 <Bar> execute 'sign unplace * group=*' <Bar> set scl=no <Bar> call ale#highlight#RemoveHighlights() <Bar> let g:ale_enabled = 0 <Bar> else <Bar> let g:ale_enabled = 1 <Bar> set scl=auto <Bar> ALELint <Bar> endif<CR>
 nnoremap <silent> <leader>] :bn!<CR>
 nnoremap <silent> <leader>[ :bp!<CR>
 nnoremap <leader>g :!stack ghc -- -fno-code -v0 %<CR>
